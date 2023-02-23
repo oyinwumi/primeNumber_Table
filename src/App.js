@@ -32,7 +32,7 @@ function App() {
  const emptyCells = [];
     for(let i = 0; i < primeNumbers.length; i++){
       if(i === 0){
-        emptyCells.push(<td className='border-b-2 border-r-2'></td>)
+        emptyCells.push(<td className='border-b-2 border-r-2 '></td>)
       }
       else{
         emptyCells.push(<td className='border-b-2 border-r-2'>{primeNumbers[i - 1]}</td>)
@@ -40,20 +40,22 @@ function App() {
     }
    tableRows.unshift(<tr className='border-b-2 border-r-2 h-8 text-xl'>{emptyCells}</tr>)
    return tableRows
+
+ 
   };
 
 
    
   return (
     <div className="m-6">
-      <h1  className=" text-2xl text-center">Prime number Multiplication Table</h1>
+      <h1  className=" md:text-2xl text-center">Prime number Multiplication Table</h1>
       <input onChange={(e) => setInputValue(e.target.value)} 
       type="number"
        value={inputValue}
        className="border-2 rounded text-xl my-8"
        />
           <div>
-            <table className='border-2 ' width={'100%'}>
+            <table className='border-2  md:text-xl text-sm' width={'100%'}>
                {generateTable()}
             </table>
             </div> 
